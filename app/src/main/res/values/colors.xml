@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!--gradien-->
+    <color name="colorGradient1">#00B4DB</color>
+    <color name="colorGradient2">#0083B0</color>
+
+    <!--font-->
+    <color name="colorfontblack">#000000</color>
+    <color name="colorfontwhite">#ffffff</color>
+
+    <!--bg-edit text-->
+    <color name="colorBgEdittext">#000083B0</color>
+</resources>

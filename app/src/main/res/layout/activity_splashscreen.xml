@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:id="@+id/rl_main"
+    tools:context=".Splashscreen">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_above="@id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logo_white" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="120dp"
+        android:max="100"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp" />
+
+    <TextView
+        android:id="@+id/prg_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/progressbar"
+        android:layout_alignRight="@id/progressbar"
+        android:layout_marginRight="50dp"
+        android:fontFamily="@font/bebasneue"
+        android:textColor="@color/colorfontwhite"
+        android:textSize="30sp"
+        tools:text="100%" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/bebasneue"
+        android:text="@string/title"
+        android:textColor="@color/colorfontwhite"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

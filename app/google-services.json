@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "106715084147",
+    "firebase_url": "https://education-25e12.firebaseio.com",
+    "project_id": "education-25e12",
+    "storage_bucket": "education-25e12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106715084147:android:62562451f59c78ffe14106",
+        "android_client_info": {
+          "package_name": "com.didapteam.project.education"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106715084147-jjcd0d30koprmm7fcicdgnn9i58uiafu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOFXhJpfhO7OkVCdSbfC3C8Lc8wQBRL4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106715084147-jjcd0d30koprmm7fcicdgnn9i58uiafu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
