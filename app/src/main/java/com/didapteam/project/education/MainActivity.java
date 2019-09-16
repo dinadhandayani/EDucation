@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         String password = bundle.getString("pass");
 
         auth = FirebaseAuth.getInstance();
-        TextView tvUser = findViewById(R.id.tv_user);
-        tvUser.setText(email+" "+password);
+        /* TextView tvUser = findViewById(R.id.tv_user);
+        tvUser.setText(email+" "+password); */
     }
 
     protected void onPause(){

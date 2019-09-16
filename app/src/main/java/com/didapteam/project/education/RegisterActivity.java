@@ -12,15 +12,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText edtName, edtEmail, edtPassword, edtConfPassword;
     private Button btnCreateAccount;
     private FirebaseAuth auth;
+    private DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +77,8 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                         }
                     });
+                    submitUser(new Users(name, email, password));
+
                 }
                 if(password.isEmpty()){
                     edtPassword.setError("Password Tidak Boleh Kosong!");
@@ -82,5 +92,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void Login(View view) {
         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+    }
+
+    public void submitUser(Users user){
+        /*menambahkan user ke firebase */
+        database.child("users").push().setValue(user);
     }
 }

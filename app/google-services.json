@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "106715084147-jtc7m8n2v9bl28r9cf4ec3upheskj9d0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.didapteam.project.education",
+            "certificate_hash": "b6b74bfc3171c58748494a2b0af8263ae231e7e0"
+          }
+        },
+        {
           "client_id": "106715084147-jjcd0d30koprmm7fcicdgnn9i58uiafu.apps.googleusercontent.com",
           "client_type": 3
         }
