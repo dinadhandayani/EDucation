@@ -14,4 +14,7 @@
 
     <!--bg-edit text-->
     <color name="colorBgEdittext">#000083B0</color>
+
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#0083B0</color>
 </resources>

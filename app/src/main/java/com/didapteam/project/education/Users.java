@@ -6,6 +6,7 @@ public class Users implements Serializable {
     private String nama;
     private String email;
     private String password;
+    private String key;
 
     public Users(){
 
@@ -40,5 +41,13 @@ public class Users implements Serializable {
         nama = nm;
         email = em;
         password = pass;
+    }
+
+    public String getKey(String key){
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }
