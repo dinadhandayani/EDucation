@@ -1,10 +1,13 @@
 package com.didapteam.project.education;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +30,7 @@ public class DBReadUserActivity extends Fragment {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<Users> listUser;
+    private ArrayList<String> listChat;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,24 @@ public class DBReadUserActivity extends Fragment {
 /**
  * Mengambil data dari Firebase Realtime DB
  */
+        database.child("messages").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                listChat = new ArrayList<>();
+                String temp;
+
+                for (DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()){
+                    temp = noteDataSnapshot.getKey();
+
+                    listChat.add(noteDataSnapshot.getKey());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                System.out.println(databaseError.getDetails()+" "+databaseError.getMessage());
+            }
+        });
         database.child("users").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -57,8 +79,8 @@ public class DBReadUserActivity extends Fragment {
                 listUser = new ArrayList<>();
                 for (DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()) {
 /**
- * Mapping data pada DataSnapshot ke dalam object Dosen
- * Dan juga menyimpan primary key pada object Dosen
+ * Mapping data pada DataSnapshot ke dalam object User
+ * Dan juga menyimpan primary key pada object User
  * untuk keperluan Edit dan Delete data
  */
                     Users users = noteDataSnapshot.getValue(Users.class);
@@ -67,7 +89,7 @@ public class DBReadUserActivity extends Fragment {
  * Menambahkan object Dosen yang sudah dimapping
  * ke dalam ArrayList
  */
-                    if(!users.getEmail().substring(0, users.getEmail().indexOf('@')).equals(UserChat.email)){
+                    if(!users.getBidang().equals("null")){
                         listUser.add(users);
                     }
 
@@ -91,6 +113,16 @@ public class DBReadUserActivity extends Fragment {
                 System.out.println(databaseError.getDetails()+" "+databaseError.getMessage());
             }
         });
+
+        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                        .setAction("Action ", null).show();
+            }
+        });
+
         return rootView;
     }
 

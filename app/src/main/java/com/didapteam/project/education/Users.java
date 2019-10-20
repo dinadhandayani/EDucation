@@ -6,7 +6,10 @@ public class Users implements Serializable {
     private String nama;
     private String email;
     private String password;
+    private String bidang;
     private String key;
+
+
 
     public Users(){
 
@@ -37,13 +40,22 @@ public class Users implements Serializable {
     }
 
 
-    public Users(String nm, String em, String pass){
+    public Users(String nm, String em, String pass, String bid){
         nama = nm;
         email = em;
         password = pass;
+        bidang = bidang;
     }
 
-    public String getKey(String key){
+    public String getBidang(){
+        return bidang;
+    }
+
+    public void setBidang(String bidang) {
+        this.bidang = bidang;
+    }
+
+    public String getKey() {
         return key;
     }
 

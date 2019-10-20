@@ -5,10 +5,47 @@
     android:layout_height="wrap_content"
     android:padding="10dip">
 
-    <TextView
-        android:id="@+id/tv_username"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="16sp"/>
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:clickable="true"
+            app:civ_border_width="3dp"
+            app:civ_border_color="#FFFFFFFF"
+
+            android:id="@+id/profile_pict"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pic1" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:text="Android Name"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/profile_pict"
+            android:layout_toEndOf="@+id/profile_pict"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp" />
+
+        <TextView
+            android:id="@+id/tv_last_chat"
+            android:text="Android Version"
+            android:textSize="12sp"
+            android:maxLines="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_username"
+            android:layout_alignLeft="@+id/tv_username"
+            android:layout_alignStart="@+id/tv_username" />
+
+    </RelativeLayout>
 </LinearLayout>

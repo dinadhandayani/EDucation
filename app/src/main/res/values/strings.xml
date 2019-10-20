@@ -9,5 +9,35 @@
     <string name="write_a_message">Type a message</string>
     <string name="place_name">Nama Pahlawan</string>
     <string name="desc">Deskripsi</string>
+    
+    <array name="nama_konsul">
+        <item>Mia Rosmiati, S.Pd., M.Pd.</item>
+        <item>Wawan Setiawan, S.Pd., M.Si.</item>
+        <item>Muhammad Ibnu Hibatullah, S.Si., M.Pd.</item>
+        <item>Risky Mulia Kusumah Dewi, S.Si., M.Pd.</item>
+        <item>Pernik Dessi Yustiza, S.Pd., M.Pd.</item>
+        <item>Annisa Fitria, S.Pd., M.Ag.</item>
+        <item>Dr. Yanrie Faisal Tsaqal, S.Psi., M.Pd.</item>
+    </array>
+
+    <array name="rating">
+        <item>5.0</item>
+        <item>4.9</item>
+        <item>4.9</item>
+        <item>4.8</item>
+        <item>5.0</item>
+        <item>4.8</item>
+        <item>5.0</item>
+    </array>
+
+    <array name="bidang">
+        <item>Pendidikan</item>
+        <item>Pendidikan Matematika</item>
+        <item>Pendidikan Biologi</item>
+        <item>Pendidikan Fisika</item>
+        <item>Pendidikan Kewarganegaraan</item>
+        <item>Pendidikan Agama Islam</item>
+        <item>Psikologi Pendidikan</item>
+    </array>
 
 </resources>

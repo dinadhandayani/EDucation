@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.didapteam.project.education">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VideoCall"></activity>
+        <service android:name=".SinchService"/>
+        <activity android:name=".VideoLoginActivity"/>
+        <activity android:name=".CallScreenActivity"/>
+        <activity android:name=".IncomingCallScreenActivity"/>
+        <activity android:name=".PlaceCallActivity"/>
+        <activity android:name=".BaseActivity"/>
         <activity android:name=".DBReadUserActivity" />
         <activity android:name=".ChatRoom" />
         <activity

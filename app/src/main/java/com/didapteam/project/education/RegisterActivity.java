@@ -56,6 +56,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = edtEmail.getText().toString().trim();
                 String password = edtPassword.getText().toString().trim();
                 String confPassword = edtConfPassword.getText().toString().trim();
+                String bidang = "null";
 
                 if(name.isEmpty()){
                     edtName.setError("Nama Tidak Boleh Kosong!");
@@ -77,7 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                         }
                     });
-                    submitUser(new Users(name, email, password));
+                    submitUser(new Users(name, email, password, bidang));
 
                 }
                 if(password.isEmpty()){

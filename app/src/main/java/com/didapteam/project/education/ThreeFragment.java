@@ -30,7 +30,7 @@ public class ThreeFragment extends Fragment{
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), VideoCall.class));
+                startActivity(new Intent(getActivity(), VideoLoginActivity.class));
             }
         });
         return rootView;
