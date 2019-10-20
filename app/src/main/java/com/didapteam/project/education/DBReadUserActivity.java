@@ -17,11 +17,14 @@ import com.google.firebase.database.ValueEventListener;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+
+import static com.android.volley.VolleyLog.TAG;
 
 public class DBReadUserActivity extends Fragment {
 
@@ -30,7 +33,8 @@ public class DBReadUserActivity extends Fragment {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<Users> listUser;
-    private ArrayList<String> listChat;
+    private ArrayList<String> listChat = new ArrayList<>();
+    private ArrayList<String> listChatTemp = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,7 +50,6 @@ public class DBReadUserActivity extends Fragment {
         rvView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
         rvView.setLayoutManager(layoutManager);
-
         database = FirebaseDatabase.getInstance().getReference();
 
 /**
@@ -55,13 +58,20 @@ public class DBReadUserActivity extends Fragment {
         database.child("messages").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                listChatTemp = listChat;
                 listChat = new ArrayList<>();
                 String temp;
+                int indexEnd;
 
-                for (DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()){
-                    temp = noteDataSnapshot.getKey();
+                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()){
+                    temp = childSnapshot.getKey();
+                    indexEnd = temp.length();
+                    if(temp.substring(0, temp.indexOf('_')).equals(UserChat.email)){
+                        listChat.add(temp.substring(temp.indexOf('_')+1, indexEnd));
+                        //Log.i(TAG,temp);
+                        //Log.i(TAG, String.valueOf(listChat));
+                    }
 
-                    listChat.add(noteDataSnapshot.getKey());
                 }
             }
 
@@ -73,31 +83,38 @@ public class DBReadUserActivity extends Fragment {
         database.child("users").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-/**
- * Saat ada data baru, masukkan datanya ke ArrayList
- */
+                /**
+                 * Saat ada data baru, masukkan datanya ke ArrayList
+                 */
+
                 listUser = new ArrayList<>();
+
+                Log.i(TAG, String.valueOf(listChat));
+
                 for (DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()) {
-/**
- * Mapping data pada DataSnapshot ke dalam object User
- * Dan juga menyimpan primary key pada object User
- * untuk keperluan Edit dan Delete data
- */
+                    /**
+                     * Mapping data pada DataSnapshot ke dalam object User
+                     * Dan juga menyimpan primary key pada object User
+                     * untuk keperluan Edit dan Delete data
+                     */
                     Users users = noteDataSnapshot.getValue(Users.class);
                     users.setKey(noteDataSnapshot.getKey());
-/**
- * Menambahkan object Dosen yang sudah dimapping
- * ke dalam ArrayList
- */
-                    if(!users.getBidang().equals("null")){
-                        listUser.add(users);
-                    }
 
-                }
-/**
- * Inisialisasi adapter dan data Dosen dalam bentuk ArrayList
- * dan mengeset Adapter ke dalam RecyclerView
- */
+                    //for (String temps : listChat)
+                        if(!users.getBidang().equals("null")){
+                            listUser.add(users);
+                        }
+                    //}
+                    /**
+                     * Menambahkan object User yang sudah dimapping
+                     * ke dalam ArrayList
+                     */
+
+                                    }
+                    /**
+                     * Inisialisasi adapter dan data Dosen dalam bentuk ArrayList
+                     * dan mengeset Adapter ke dalam RecyclerView
+                     */
                 adapter = new AdapterUserRecyclerView(listUser, getActivity());
                 rvView.setAdapter(adapter);
 
@@ -105,11 +122,11 @@ public class DBReadUserActivity extends Fragment {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-/**
- * Kode ini akan dipanggil ketika ada error dan
- * pengambilan data gagal dan memprint error nya
- * ke LogCat
- */
+                /**
+                 * Kode ini akan dipanggil ketika ada error dan
+                 * pengambilan data gagal dan memprint error nya
+                 * ke LogCat
+                 */
                 System.out.println(databaseError.getDetails()+" "+databaseError.getMessage());
             }
         });

@@ -44,7 +44,7 @@ public class Users implements Serializable {
         nama = nm;
         email = em;
         password = pass;
-        bidang = bidang;
+        bidang = bid;
     }
 
     public String getBidang(){
