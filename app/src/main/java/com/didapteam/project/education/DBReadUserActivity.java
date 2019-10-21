@@ -33,8 +33,7 @@ public class DBReadUserActivity extends Fragment {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<Users> listUser;
-    private ArrayList<String> listChat = new ArrayList<>();
-    private ArrayList<String> listChatTemp = new ArrayList<>();
+    private ArrayList<String> listChat;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,10 +57,10 @@ public class DBReadUserActivity extends Fragment {
         database.child("messages").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                listChatTemp = listChat;
                 listChat = new ArrayList<>();
                 String temp;
                 int indexEnd;
+
 
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()){
                     temp = childSnapshot.getKey();
@@ -69,7 +68,6 @@ public class DBReadUserActivity extends Fragment {
                     if(temp.substring(0, temp.indexOf('_')).equals(UserChat.email)){
                         listChat.add(temp.substring(temp.indexOf('_')+1, indexEnd));
                         //Log.i(TAG,temp);
-                        //Log.i(TAG, String.valueOf(listChat));
                     }
 
                 }
@@ -88,8 +86,6 @@ public class DBReadUserActivity extends Fragment {
                  */
 
                 listUser = new ArrayList<>();
-
-                Log.i(TAG, String.valueOf(listChat));
 
                 for (DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()) {
                     /**
@@ -135,8 +131,9 @@ public class DBReadUserActivity extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                        .setAction("Action ", null).show();
+                /*Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                        .setAction("Action ", null).show();*/
+                startActivity(new Intent(getActivity(), CategoryGridViewActivity.class));
             }
         });
 

@@ -10,7 +10,7 @@
     <string name="place_name">Nama Pahlawan</string>
     <string name="desc">Deskripsi</string>
     
-    <array name="nama_konsul">
+    <string-array name="nama_konsul">
         <item>Mia Rosmiati, S.Pd., M.Pd.</item>
         <item>Wawan Setiawan, S.Pd., M.Si.</item>
         <item>Muhammad Ibnu Hibatullah, S.Si., M.Pd.</item>
@@ -18,7 +18,7 @@
         <item>Pernik Dessi Yustiza, S.Pd., M.Pd.</item>
         <item>Annisa Fitria, S.Pd., M.Ag.</item>
         <item>Dr. Yanrie Faisal Tsaqal, S.Psi., M.Pd.</item>
-    </array>
+    </string-array>
 
     <array name="rating">
         <item>5.0</item>
@@ -30,7 +30,7 @@
         <item>5.0</item>
     </array>
 
-    <array name="bidang">
+    <string-array name="bidang">
         <item>Pendidikan</item>
         <item>Pendidikan Matematika</item>
         <item>Pendidikan Biologi</item>
@@ -38,6 +38,16 @@
         <item>Pendidikan Kewarganegaraan</item>
         <item>Pendidikan Agama Islam</item>
         <item>Psikologi Pendidikan</item>
+    </string-array>
+
+    <array name="category_photos">
+        <item>@drawable/ic_add</item>
+        <item>@drawable/ic_add</item>
+        <item>@drawable/ic_add</item>
+        <item>@drawable/ic_add</item>
+        <item>@drawable/ic_add</item>
+        <item>@drawable/ic_add</item>
+        <item>@drawable/ic_add</item>
     </array>
 
 </resources>
