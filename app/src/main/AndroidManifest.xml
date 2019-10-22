@@ -27,6 +27,7 @@
         <activity android:name=".DBReadUserActivity" />
         <activity android:name=".ChatRoom" />
         <activity android:name=".CategoryGridViewActivity" />
+        <activity android:name=".ConsultanListActivity" />
         <activity
             android:name=".Splashscreen"
             android:screenOrientation="portrait"

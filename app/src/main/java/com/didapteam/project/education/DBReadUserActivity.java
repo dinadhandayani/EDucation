@@ -51,9 +51,30 @@ public class DBReadUserActivity extends Fragment {
         rvView.setLayoutManager(layoutManager);
         database = FirebaseDatabase.getInstance().getReference();
 
+        getUserChat();
+
 /**
  * Mengambil data dari Firebase Realtime DB
  */
+
+        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                        .setAction("Action ", null).show();*/
+                startActivity(new Intent(getActivity(), CategoryGridViewActivity.class));
+            }
+        });
+
+        return rootView;
+    }
+
+    public static Intent getActIntent(Activity activity){
+        return new Intent(activity, DBReadUserActivity.class);
+    }
+
+    private void getUserChat(){
         database.child("messages").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -71,6 +92,7 @@ public class DBReadUserActivity extends Fragment {
                     }
 
                 }
+                getUserList(listChat);
             }
 
             @Override
@@ -78,6 +100,10 @@ public class DBReadUserActivity extends Fragment {
                 System.out.println(databaseError.getDetails()+" "+databaseError.getMessage());
             }
         });
+
+    }
+
+    private void getUserList(ArrayList<String> userC){
         database.child("users").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -86,7 +112,6 @@ public class DBReadUserActivity extends Fragment {
                  */
 
                 listUser = new ArrayList<>();
-
                 for (DataSnapshot noteDataSnapshot : dataSnapshot.getChildren()) {
                     /**
                      * Mapping data pada DataSnapshot ke dalam object User
@@ -96,25 +121,25 @@ public class DBReadUserActivity extends Fragment {
                     Users users = noteDataSnapshot.getValue(Users.class);
                     users.setKey(noteDataSnapshot.getKey());
 
-                    //for (String temps : listChat)
-                        if(!users.getBidang().equals("null")){
+                    for (String temps : userC) {
+                        if((!users.getBidang().equals("null")) && users.getEmail().substring(0, users.getEmail().indexOf('@')).equals(temps)){
                             listUser.add(users);
                         }
-                    //}
+                    }
                     /**
                      * Menambahkan object User yang sudah dimapping
                      * ke dalam ArrayList
                      */
 
-                                    }
-                    /**
-                     * Inisialisasi adapter dan data Dosen dalam bentuk ArrayList
-                     * dan mengeset Adapter ke dalam RecyclerView
-                     */
+                }
+                /**
+                 * Inisialisasi adapter dan data User dalam bentuk ArrayList
+                 * dan mengeset Adapter ke dalam RecyclerView
+                 */
                 adapter = new AdapterUserRecyclerView(listUser, getActivity());
                 rvView.setAdapter(adapter);
 
-    }
+            }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -126,22 +151,6 @@ public class DBReadUserActivity extends Fragment {
                 System.out.println(databaseError.getDetails()+" "+databaseError.getMessage());
             }
         });
-
-        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                        .setAction("Action ", null).show();*/
-                startActivity(new Intent(getActivity(), CategoryGridViewActivity.class));
-            }
-        });
-
-        return rootView;
-    }
-
-    public static Intent getActIntent(Activity activity){
-        return new Intent(activity, DBReadUserActivity.class);
     }
 
 }

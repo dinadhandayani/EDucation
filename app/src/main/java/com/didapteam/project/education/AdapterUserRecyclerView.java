@@ -17,7 +17,6 @@ public class AdapterUserRecyclerView extends RecyclerView.Adapter<AdapterUserRec
  * Inisiasi data dan variabel yang akan digunakan
  */
         userList = users;
-        userList = users;
         context = ctx;
     }
     class ViewHolder extends RecyclerView.ViewHolder {
