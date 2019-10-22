@@ -55,7 +55,7 @@ dependencies {
 
     implementation 'de.hdodenhof:circleimageview:3.0.1'
 
-    implementation(name:'sinch-android-rtc', version:'+', ext:'aar')
+    implementation(name: 'sinch-android-rtc', version: '+', ext: 'aar')
 
 
 }

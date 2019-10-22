@@ -7,9 +7,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-
-
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -18,12 +16,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <service android:name=".SinchService"/>
-        <activity android:name=".VideoLoginActivity"/>
-        <activity android:name=".CallScreenActivity"/>
-        <activity android:name=".IncomingCallScreenActivity"/>
-        <activity android:name=".PlaceCallActivity"/>
-        <activity android:name=".BaseActivity"/>
+        <activity android:name=".DetailData"></activity>
+        <activity android:name=".DataVerification" />
+
+        <service android:name=".SinchService" />
+
+        <activity android:name=".VideoLoginActivity" />
+        <activity android:name=".CallScreenActivity" />
+        <activity android:name=".IncomingCallScreenActivity" />
+        <activity android:name=".PlaceCallActivity" />
+        <activity android:name=".BaseActivity" />
         <activity android:name=".DBReadUserActivity" />
         <activity android:name=".ChatRoom" />
         <activity android:name=".CategoryGridViewActivity" />

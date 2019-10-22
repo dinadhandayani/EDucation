@@ -9,7 +9,7 @@
     <string name="write_a_message">Type a message</string>
     <string name="place_name">Nama Pahlawan</string>
     <string name="desc">Deskripsi</string>
-    
+
     <string-array name="nama_konsul">
         <item>Mia Rosmiati, S.Pd., M.Pd.</item>
         <item>Wawan Setiawan, S.Pd., M.Si.</item>
@@ -50,4 +50,15 @@
         <item>@drawable/ic_add</item>
     </array>
 
+    <string name="aceh_singkil">
+        Suku Singkil memliliki budaya sendiri yang banyak dipengaruhi oleh tradisi
+        keislaman. Meski serumpun, etnis ini memiliki adat dan budaya yang jauh
+        berbeda dengan Suku Pakpak. Hal ini dikarenakan suku Singkil menganut agama
+        Islam sedangkan suku Pakpak mayoritas memeluk agama Kristen. Selain itu suku
+        Singkil lebih banyak bercampur dengan etnis-etnis pendatang, seperti suku Aceh dan Minang.
+
+        Kabupaten ini terdiri dari dua wilayah yaitu daratan dan kepulauan.Kepulauan
+        yang menjadi bagian dari Kabupaten Aceh Singkil adalah Kepulauan Banyak
+        yang terdiri dari Pulau Banyak dan Pulau Banyak Barat.
+    </string>
 </resources>
