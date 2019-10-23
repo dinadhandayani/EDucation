@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorfontwhite"
+    tools:context=".DataVerification">
+    <ImageView
+        android:id="@+id/img_bg_photo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/box_desc_city"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="-40dp"
+        android:layout_below="@+id/img_bg_photo"
+        android:background="@color/colorfontwhite">
+        <TextView
+            android:id="@+id/txt_city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/colorfontblack"
+            android:textStyle="bold"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            tools:text="Kabupaten Aceh Singkil"/>
+        <TextView
+            android:id="@+id/txt_desc_city"
+            android:layout_below="@id/txt_city_name"
+            android:textSize="14sp"
+            android:textColor="@color/colorfontblack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="4dp"
+            android:maxLines="6"
+            tools:text="@string/aceh_singkil"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/box_search"
+        android:layout_below="@id/box_desc_city"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="#f1f1f1"
+        android:layout_marginTop="10dp">
+        <SearchView
+            android:id="@+id/sv_school"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/colorBgEdittextSearchView"
+            android:queryHint="Cari daerah disini ..."/>
+        <TextView
+            android:id="@+id/txt_bidke"
+            android:layout_below="@id/sv_school"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="Bidang Keahllian"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorfontblack"/>
+        <TextView
+            android:id="@+id/txt_bidang_keahlian"
+            android:layout_below="@id/sv_school"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:layout_marginRight="12dp"
+            android:textSize="12sp"
+            android:textColor="@color/colorfontblack"
+            tools:text="Pendidikan Kewarganegaraan"/>
+
+        <TextView
+            android:id="@+id/txt_kada"
+            android:layout_below="@id/txt_bidke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:text="Karakteristik Daerah"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorfontblack"/>
+        <TextView
+            android:id="@+id/txt_karakteristik_daerah"
+            android:layout_below="@id/txt_bidang_keahlian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            android:textColor="@color/colorfontblack"
+            tools:text="Pesisir"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/box_list"
+        android:layout_below="@id/box_search"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
+        <ListView
+            android:id="@+id/list_school"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+</RelativeLayout>
