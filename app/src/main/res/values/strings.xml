@@ -62,4 +62,19 @@
         yang terdiri dari Pulau Banyak dan Pulau Banyak Barat.
     </string>
     <string name="submit">Submit</string>
+
+    <string-array name="bidang_keahlian">
+        <item>Pendidikan Kewarganegaraan</item>
+        <item>Matematika</item>
+        <item>Bahasa Indonesia</item>
+        <item>Ilmu Pengetahuan Alam</item>
+        <item>Ilmu Pengetahuan Sosial</item>
+        <item>Teknologi Informasi Komunikasi</item>
+    </string-array>
+
+    <string-array name="karakteristik_daerah">
+        <item>Pesisir</item>
+        <item>Pegunungan</item>
+        <item>Hutan</item>
+    </string-array>
 </resources>
