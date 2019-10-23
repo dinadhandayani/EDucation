@@ -29,7 +29,6 @@ public class RegisterActivity extends AppCompatActivity {
     private DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +55,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = edtEmail.getText().toString().trim();
                 String password = edtPassword.getText().toString().trim();
                 String confPassword = edtConfPassword.getText().toString().trim();
-                String bidang = "null";
 
                 if(name.isEmpty()){
                     edtName.setError("Nama Tidak Boleh Kosong!");
@@ -73,12 +71,16 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.makeText(RegisterActivity.this, "Register Gagal karena "+task.getException().getMessage(),
                                         Toast.LENGTH_LONG).show();
                             }else {
-                                //jika sukses menuju ke login
-                                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                                //jika sukses menuju ke verifikasi data
+                                Bundle bundle = new Bundle();
+                                bundle.putString("email", email);
+                                bundle.putString("password", password);
+                                bundle.putString("name", name);
+                                startActivity(new Intent(RegisterActivity.this, InputVerificationData.class).putExtra("detail", bundle));
                             }
                         }
                     });
-                    submitUser(new Users(name, email, password, bidang));
+                    //submitUser(new Users(name, email, password, bidang));
 
                 }
                 if(password.isEmpty()){
@@ -95,8 +97,8 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
     }
 
-    public void submitUser(Users user){
-        /*menambahkan user ke firebase */
-        database.child("users").push().setValue(user);
-    }
+    //public void submitUser(Users user){
+        //menambahkan user ke firebase
+        //database.child("users").push().setValue(user);
+    //}
 }

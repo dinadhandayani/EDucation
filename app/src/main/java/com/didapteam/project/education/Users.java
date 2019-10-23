@@ -8,11 +8,47 @@ public class Users implements Serializable {
     private String password;
     private String bidang;
     private String key;
+    private String daerah;
+    private String pilihan;
+    private Boolean status;
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
 
 
+    public String getDaerah() {
+        return daerah;
+    }
+
+    public void setDaerah(String daerah) {
+        this.daerah = daerah;
+    }
+
+    public String getPilihan() {
+        return pilihan;
+    }
+
+    public void setPilihan(String pilihan) {
+        this.pilihan = pilihan;
+    }
 
     public Users(){
 
+    }
+
+    public Users(String nm, String em, String pass, String bid, String da, String pil, Boolean st){
+        nama = nm;
+        email = em;
+        password = pass;
+        bidang = bid;
+        daerah = da;
+        pilihan = pil;
+        status = st;
     }
 
     public String getNama(){
@@ -37,14 +73,6 @@ public class Users implements Serializable {
 
     public void setPassword(String password){
         this.password = password;
-    }
-
-
-    public Users(String nm, String em, String pass, String bid){
-        nama = nm;
-        email = em;
-        password = pass;
-        bidang = bid;
     }
 
     public String getBidang(){

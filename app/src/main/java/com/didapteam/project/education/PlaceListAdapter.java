@@ -40,10 +40,10 @@ public class PlaceListAdapter extends RecyclerView.Adapter<PlaceListAdapter.Cate
     @Override
     public void onBindViewHolder(@NonNull final CategoryViewHolder holder, int position) {
         Place place = listPlace.get(position);
-        Glide.with(holder.itemView.getContext())
+        /*Glide.with(holder.itemView.getContext())
                 .load(place.getPhoto())
                 .apply(new RequestOptions().override(55, 55))
-                .into(holder.imgPhoto);
+                .into(holder.imgPhoto); */
         holder.tvName.setText(place.getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
