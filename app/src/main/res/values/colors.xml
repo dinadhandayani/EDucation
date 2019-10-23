@@ -27,4 +27,6 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorWhiteTransparent">#F2FFFFFF</color>
 
+    <color name="colorBlue">#269ccb</color>
+
 </resources>
