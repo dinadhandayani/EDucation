@@ -101,13 +101,17 @@
             android:textColor="@color/colorfontblack"
             tools:text="Pesisir"/>
     </RelativeLayout>
-    <ListView
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_daerah"
-        android:layout_below="@id/box_search"
         android:layout_width="match_parent"
         android:layout_height="260dp"
+        android:layout_below="@id/box_search"
         android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"/>
+        android:layout_marginTop="-1dp"
+        android:layout_marginRight="50dp"
+        tools:listitem="@layout/item_row_place"/>
+
     <Button
         android:id="@+id/btn_submit"
         android:layout_width="match_parent"

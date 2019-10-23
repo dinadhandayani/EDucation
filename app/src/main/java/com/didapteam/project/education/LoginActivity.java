@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Bundle bundle = new Bundle();
                                 bundle.putString("email", email);
                                 bundle.putString("password", password);
-                                startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("emailpass", bundle));
+                                startActivity(new Intent(LoginActivity.this, PlaceListAdapter.class).putExtra("emailpass", bundle));
                                 finish();
                             }
                         }

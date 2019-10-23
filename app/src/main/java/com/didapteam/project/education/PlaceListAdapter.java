@@ -45,7 +45,6 @@ public class PlaceListAdapter extends RecyclerView.Adapter<PlaceListAdapter.Cate
                 .apply(new RequestOptions().override(55, 55))
                 .into(holder.imgPhoto);
         holder.tvName.setText(place.getName());
-        holder.tvFrom.setText(place.getFrom());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,9 +58,7 @@ public class PlaceListAdapter extends RecyclerView.Adapter<PlaceListAdapter.Cate
         TextView tvName, tvFrom;
         CategoryViewHolder(View itemView) {
             super(itemView);
-            imgPhoto = itemView.findViewById(R.id.img_item_photo);
             tvName = itemView.findViewById(R.id.tv_item_name);
-            tvFrom = itemView.findViewById(R.id.tv_item_from);
         }
     }
     public interface OnItemClickCallback {
