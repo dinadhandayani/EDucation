@@ -28,9 +28,10 @@ public class InputVerificationData extends AppCompatActivity {
     private Spinner spnDaerah, spnBidang;
     private FirebaseAuth auth;
     private DatabaseReference database;
-    private String email, password, name;
+    private String email, password, name, download_uri;
     private int PICK_IMAGE_REQUEST = 111;
     private Uri filePath;
+    private FirebaseStorage storage;
     private StorageReference storageReference;
     private DatabaseReference databaseReference;
     private FirebaseUser user;
@@ -56,7 +57,7 @@ public class InputVerificationData extends AppCompatActivity {
     private void initView(){
         btnChooseIjazah = findViewById(R.id.btn_ijazah);
 
-        /*btnChooseIjazah.setOnClickListener(new View.OnClickListener() {
+        btnChooseIjazah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -64,46 +65,25 @@ public class InputVerificationData extends AppCompatActivity {
                 intent.setAction(Intent.ACTION_PICK);
                 startActivityForResult(Intent.createChooser(intent, "Select Image"), PICK_IMAGE_REQUEST);
             }
-        }); */
+        });
 
         btnChooseKTP = findViewById(R.id.btn_ktp);
         btnSubmit = findViewById(R.id.btn_submit);
+        btnSubmit.setEnabled(false);
         spnDaerah = findViewById(R.id.spin_kada);
         spnBidang = findViewById(R.id.spin_bidke);
     }
 
-    private void userVerif(){
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String daerah = String.valueOf(spnDaerah.getSelectedItem());
-                String pilihan = String.valueOf(spnBidang.getSelectedItem());
-                Boolean status = false;
-                String bidang = "null";
-
-                submitUser(new Users(name, email, password, bidang, daerah, pilihan,  status));
-            }
-        });
-    }
-
-    public void submitUser(Users user){
-        //menambahkan user ke firebase
-        database.child("users").push().setValue(user);
-    }
-
-    /*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
             filePath = data.getData();
             if(filePath != null) {
-                Long tsLong = System.currentTimeMillis()/1000;
-                String ts = tsLong.toString();
 
-                StorageReference childRef = storageReference.child("Images/"+ts);
-
-
+                storage = FirebaseStorage.getInstance();
+                storageReference = storage.getReference();
+                StorageReference childRef = storageReference.child("Images/"+email.substring(0, email.indexOf('@')));
 
                 //uploading the image
                 UploadTask uploadTask = childRef.putFile(filePath);
@@ -111,14 +91,8 @@ public class InputVerificationData extends AppCompatActivity {
                 uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Uri download_uri = taskSnapshot.getDownloadUrl();
-
-                        ImageModel im = new ImageModel();
-                        im.setImage_url(download_uri.toString());
-                        String key = databaseReference.child(user.getUid()).push().getKey();
-
-                        databaseReference.child(user.getUid()).child(key).setValue(im);
-
+                        download_uri = taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
+                        btnSubmit.setEnabled(true);
                         Toast.makeText(InputVerificationData.this, "Upload successful", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -133,6 +107,23 @@ public class InputVerificationData extends AppCompatActivity {
         }
     }
 
-     */
+    private void userVerif(){
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String daerah = String.valueOf(spnDaerah.getSelectedItem());
+                String pilihan = String.valueOf(spnBidang.getSelectedItem());
+                Boolean status = false;
+                String bidang = "null";
 
+                submitUser(new Users(name, email, password, bidang, daerah, pilihan,  status, download_uri));
+                startActivity(new Intent(InputVerificationData.this, LoginActivity.class));
+            }
+        });
+    }
+
+    public void submitUser(Users user){
+        //menambahkan user ke firebase
+        database.child("users").push().setValue(user);
+    }
 }

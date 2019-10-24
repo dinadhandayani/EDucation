@@ -11,6 +11,15 @@ public class Users implements Serializable {
     private String daerah;
     private String pilihan;
     private Boolean status;
+    private String imgUrl;
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
 
     public Boolean getStatus() {
         return status;
@@ -41,7 +50,7 @@ public class Users implements Serializable {
 
     }
 
-    public Users(String nm, String em, String pass, String bid, String da, String pil, Boolean st){
+    public Users(String nm, String em, String pass, String bid, String da, String pil, Boolean st, String im){
         nama = nm;
         email = em;
         password = pass;
@@ -49,6 +58,7 @@ public class Users implements Serializable {
         daerah = da;
         pilihan = pil;
         status = st;
+        imgUrl = im;
     }
 
     public String getNama(){

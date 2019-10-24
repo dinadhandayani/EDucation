@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getBundleExtra("emailpass");
         String email = bundle.getString("email");
-        String password = bundle.getString("pass");
 
         UserChat.email = email.substring(0, email.indexOf('@'));
         auth = FirebaseAuth.getInstance();
