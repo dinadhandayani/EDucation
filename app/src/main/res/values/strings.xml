@@ -1,25 +1,4 @@
 <resources>
-    <string name="app_name">E-Ducation</string>
-    <string name="title">E-DUCATION</string>
-    <string name="nama_lengkap">Nama Lengkap :</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="daftar">DAFTAR</string>
-    <string name="login">LOGIN</string>
-    <string name="write_a_message">Type a message</string>
-    <string name="place_name">Nama Pahlawan</string>
-    <string name="desc">Deskripsi</string>
-
-    <string-array name="nama_konsul">
-        <item>Mia Rosmiati, S.Pd., M.Pd.</item>
-        <item>Wawan Setiawan, S.Pd., M.Si.</item>
-        <item>Muhammad Ibnu Hibatullah, S.Si., M.Pd.</item>
-        <item>Risky Mulia Kusumah Dewi, S.Si., M.Pd.</item>
-        <item>Pernik Dessi Yustiza, S.Pd., M.Pd.</item>
-        <item>Annisa Fitria, S.Pd., M.Ag.</item>
-        <item>Dr. Yanrie Faisal Tsaqal, S.Psi., M.Pd.</item>
-    </string-array>
-
     <array name="rating">
         <item>5.0</item>
         <item>4.9</item>
@@ -29,17 +8,6 @@
         <item>4.8</item>
         <item>5.0</item>
     </array>
-
-    <string-array name="bidang">
-        <item>Pendidikan</item>
-        <item>Pendidikan Matematika</item>
-        <item>Pendidikan Biologi</item>
-        <item>Pendidikan Fisika</item>
-        <item>Pendidikan Kewarganegaraan</item>
-        <item>Pendidikan Agama Islam</item>
-        <item>Psikologi Pendidikan</item>
-    </string-array>
-
     <array name="category_photos">
         <item>@drawable/ic_add</item>
         <item>@drawable/ic_add</item>
@@ -47,8 +15,19 @@
         <item>@drawable/ic_add</item>
         <item>@drawable/ic_add</item>
         <item>@drawable/ic_add</item>
-        <item>@drawable/ic_add</item>
     </array>
+    <string name="app_name">E-Ducation</string>
+    <string name="title">E-DUCATION</string>
+    <string name="nama_lengkap">Nama Lengkap :</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="daftar">DAFTAR</string>
+    <string name="login">LOGIN</string>
+    <string name="write_a_message">Type a message</string>
+
+    <string name="place_name">Nama Pahlawan</string>
+
+    <string name="desc">Deskripsi</string>
 
     <string name="aceh_singkil">
         Suku Singkil memliliki budaya sendiri yang banyak dipengaruhi oleh tradisi
@@ -61,7 +40,17 @@
         yang menjadi bagian dari Kabupaten Aceh Singkil adalah Kepulauan Banyak
         yang terdiri dari Pulau Banyak dan Pulau Banyak Barat.
     </string>
+
     <string name="submit">Submit</string>
+
+    <string-array name="bidang">
+        <item>Pendidikan Kewarganegaraan</item>
+        <item>Matematika</item>
+        <item>Bahasa Indonesia</item>
+        <item>Ilmu Pengetahuan Alam</item>
+        <item>Ilmu Pengetahuan Sosial</item>
+        <item>Teknologi Informasi Komunikasi</item>
+    </string-array>
 
     <string-array name="bidang_keahlian">
         <item>Pendidikan Kewarganegaraan</item>

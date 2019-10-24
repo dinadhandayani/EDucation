@@ -57,9 +57,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new OneFragment(), "Profil Daerah");
         adapter.addFragment(new DBReadUserActivity(), "Pesan");
         adapter.addFragment(new ThreeFragment(), "Monitoring");
+        adapter.addFragment(new OneFragment(), "Profil");
         viewPager.setAdapter(adapter);
     }
 
