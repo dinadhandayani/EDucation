@@ -117,7 +117,7 @@ public class InputVerificationData extends AppCompatActivity {
                 String bidang = "null";
 
                 submitUser(new Users(name, email, password, bidang, daerah, pilihan,  status, download_uri));
-
+                startActivity(new Intent(InputVerificationData.this, LoginActivity.class));
             }
         });
     }

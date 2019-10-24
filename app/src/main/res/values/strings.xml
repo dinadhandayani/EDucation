@@ -21,16 +21,18 @@
     </string-array>
 
     <string-array name="bidang">
-        <item>Pendidikan</item>
-        <item>Pendidikan Matematika</item>
-        <item>Pendidikan Biologi</item>
-        <item>Pendidikan Fisika</item>
         <item>Pendidikan Kewarganegaraan</item>
+        <item>Matematika</item>
+        <item>Bahasa Indonesia</item>
+        <item>Ilmu Pengetahuan Alam</item>
+        <item>Ilmu Pengetahuan Sosial</item>
         <item>Teknologi Informasi Komunikasi</item>
         <item>Psikologi Pendidikan</item>
+        <item>Pendidikan</item>
     </string-array>
 
     <array name="category_photos">
+        <item>@drawable/ic_add</item>
         <item>@drawable/ic_add</item>
         <item>@drawable/ic_add</item>
         <item>@drawable/ic_add</item>
