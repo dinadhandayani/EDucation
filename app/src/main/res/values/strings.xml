@@ -77,4 +77,176 @@
         <item>Pegunungan</item>
         <item>Hutan</item>
     </string-array>
+
+    <string-array name="nama_kabupaten">
+        <item>Kabupaten Aceh Singkil</item>
+        <item>Kabupaten Ende</item>
+        <item>Kabupaten Kepulauan Talaud</item>
+        <item>Kabupaten Manokwari</item>
+        <item>Kabupaten Malinau</item>
+    </string-array>
+
+    <string-array name="deskripsi_daerah">
+        <item>Suku Singkil memliliki budaya sendiri yang banyak dipengaruhi oleh tradisi
+        keislaman. Meski serumpun, etnis ini memiliki adat dan budaya yang jauh
+        berbeda dengan Suku Pakpak. Hal ini dikarenakan suku Singkil menganut agama
+        Islam sedangkan suku Pakpak mayoritas memeluk agama Kristen. Selain itu suku
+        Singkil lebih banyak bercampur dengan etnis-etnis pendatang, seperti suku
+        Aceh dan Minang.
+        Kabupaten ini terdiri dari dua wilayah yaitu daratan dan kepulauan.Kepulauan
+        yang menjadi bagian dari Kabupaten Aceh Singkil adalah Kepulauan Banyak
+        yang terdiri dari Pulau Banyak dan Pulau Banyak Barat.</item>
+
+        <item>Curah hujan di Kabupaten Ende relatif kecil dan variatif. Seperti kawasan
+        lain di Indonesia, curah hujan tertinggi akan muncul di bulan Oktober – April.
+        Curah hujan paling tinggi tercatat di wilayah barat dengan jumlah curah hujan
+        per tahun mencapai 2.169 milimeter. Suhu udara sehari-hari di musim panas
+        tidak terlalu berbeda jauh dengan musim hujan. Perkiraan suhu
+        di siang hari mencapai 33,5°C sedangkan malam hari mencapai 23°C.</item>
+
+        <item>Iklim di wilayah Kabupaten Kepulauan Talaud secara global menurut klasifikasi
+        iklim dari Schmidt dan Ferguson adalah bertipe iklim A (iklim basah),
+        memiliki bulan basah sebanyak 8–9 bulan dengan jumlah curah hujan bulanan
+        pada tahun 2010 mencapai 316 mm/bulan
+        Topografi Kabupaten Kepulauan Talaud sebagian besar terdiri dari wilayah
+        pergunungan dan tanah berbukit-bukit yang dikelilingi oleh lautan.</item>
+
+        <item>Gambaran kondisi wilayah yang ada di Kabupaten Manokwari Selatan yang
+        terbagi kedalam 2 (dua) tipologi wilayah yaitu pesisir dan pegunungan.</item>
+
+        <item>Kebanyakan daerah merupakan dataran tinggi dan ditumbuhi hutan belantara.
+        Terdapat beberapa suku, yaiut : Suku Dayak Tidung, Suku Dayak Kayan, Suku Dayak Kenyah,
+            Suku Dayak Berusu, Suku Dayak Tingalan, Suku Dayak Sa’ben, Suku Dayak Punan,
+            Suku Dayak Lun Dayeh, Suku Dayak Abai, Suku Bulungan</item>
+    </string-array>
+
+    <string-array name="nama_sekolah">
+        <item>SDN 1 PEMUKA</item>
+        <item>SMPN 2 PULO SAROK SINGKIL</item>
+        <item>SMP NEGERI 1 NANGAPANDA</item>
+        <item>SD NEGERI MALAARA</item>
+        <item>SMP NEGERI 1 KABARUAN</item>
+        <item>SD NEGERI PANGERAN KABARUAN</item>
+        <item>SMP NEGERI 11 MASNI</item>
+        <item>SD NEGERI KALI MERAH</item>
+        <item>SMP NEGERI 1 KAYAN HULU</item>
+        <item>SDN 004 KAYAN HULU</item>
+    </string-array>
+    
+    <string-array name="kab_sekolah">
+        <item>Kabupaten Aceh Singkil</item>
+        <item>Kabupaten Aceh Singkil</item>
+        <item>Kabupaten Ende</item>
+        <item>Kabupaten Ende</item>
+        <item>Kabupaten Kepulauan Talaud</item>
+        <item>Kabupaten Kepulauan Talaud</item>
+        <item>Kabupaten Manokwari</item>
+        <item>Kabupaten Manokwari</item>
+        <item>Kabupaten Malinau</item>
+        <item>Kabupaten Malinau</item>
+    </string-array>
+    
+    <string-array name="kebutuhan1">
+        <item>Pendidikan Kewarganegaraan</item>
+        <item>Matematika</item>
+        <item>Matematika</item>
+        <item>Pendidikan Kewarganegaraan</item>
+        <item>Matematika</item>
+        <item>Pendidikan Kewarganegaraan</item>
+        <item>Matematika</item>
+        <item>Pendidikan Kewarganegaraan</item>
+        <item>Matematika</item>
+        <item>Pendidikan Kewarganegaraan</item>
+    </string-array>
+
+    <string-array name="kebutuhan2">
+        <item>Matematika</item>
+        <item>Ilmu Pengetahuan Sosial</item>
+        <item>Ilmu Pengetahuan Sosial</item>
+        <item>Matematika</item>
+        <item>Teknologi Informasi Komunikasi</item>
+        <item>Teknologi Informasi Komunikasi</item>
+        <item>Bahasa Indonesia</item>
+        <item>Matematika</item>
+        <item>Pendidikan Kewarganegaraan</item>
+        <item>Matematika</item>
+    </string-array>
+    
+    <string-array name="status_bos">
+        <item>Bersedia Menerima</item>
+        <item>Bersedia Menerima</item>
+        <item>Bersedia Menerima</item>
+        <item>Bersedia Menerima</item>
+        <item>Bersedia Menerima</item>
+        <item>Bersedia Menerima</item>
+        <item>Bersedia Menerima</item>
+        <item>Bersedia Menerima</item>
+        <item>Bersedia Menerima</item>
+        <item>Bersedia Menerima</item>
+    </string-array>
+    
+    <string-array name="waktu_penyelenggaraan">
+        <item>Pagi</item>
+        <item>Pagi</item>
+        <item>Sehari Penuh</item>
+        <item>Pagi</item>
+        <item>Pagi</item>
+        <item>Pagi</item>
+        <item>Pagi</item>
+        <item>Pagi</item>
+        <item>Sehari Penuh</item>
+        <item>Sehari Penuh</item>
+    </string-array>
+
+    <string-array name="daya_listrik">
+        <item>450</item>
+        <item>900</item>
+        <item>1200</item>
+        <item>1300</item>
+        <item>1300</item>
+        <item>900</item>
+        <item>3000</item>
+        <item>0</item>
+        <item>1600</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="akses_internet">
+        <item>Telkomsel Flash</item>
+        <item>Telkomsel Flash</item>
+        <item>Telkomsel Flash</item>
+        <item>Telkomsel Flash</item>
+        <item>Telkomsel Flash</item>
+        <item>Telkomsel Flash</item>
+        <item>Telkomsel Flash</item>
+        <item>Telkomsel Flash</item>
+        <item>Telkomsel Flash</item>
+        <item>Telkomsel Flash</item>
+    </string-array>
+    
+    <string-array name="sumber_listrik">
+        <item>PLN</item>
+        <item>PLN</item>
+        <item>PLN</item>
+        <item>PLN</item>
+        <item>PLN</item>
+        <item>PLN</item>
+        <item>PLN</item>
+        <item>Tidak Ada</item>
+        <item>PLN</item>
+        <item>Diesel</item>
+    </string-array>
+
+    <string-array name="karakteristik">
+        <item>Pesisir Pantai</item>
+        <item>Pesisir Pantai</item>
+        <item>Pegunungan</item>
+        <item>Pesisir Pantai</item>
+        <item>Pegunungan</item>
+        <item>Pegunungan</item>
+        <item>Pegunungan</item>
+        <item>Pesisir Pantai</item>
+        <item>Hutan</item>
+        <item>Hutan</item>
+    </string-array>
 </resources>
