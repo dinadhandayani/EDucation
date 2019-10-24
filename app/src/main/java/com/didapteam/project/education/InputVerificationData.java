@@ -56,7 +56,7 @@ public class InputVerificationData extends AppCompatActivity {
     private void initView(){
         btnChooseIjazah = findViewById(R.id.btn_ijazah);
 
-        /*btnChooseIjazah.setOnClickListener(new View.OnClickListener() {
+        btnChooseIjazah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -64,7 +64,7 @@ public class InputVerificationData extends AppCompatActivity {
                 intent.setAction(Intent.ACTION_PICK);
                 startActivityForResult(Intent.createChooser(intent, "Select Image"), PICK_IMAGE_REQUEST);
             }
-        }); */
+        });
 
         btnChooseKTP = findViewById(R.id.btn_ktp);
         btnSubmit = findViewById(R.id.btn_submit);
@@ -91,7 +91,7 @@ public class InputVerificationData extends AppCompatActivity {
         database.child("users").push().setValue(user);
     }
 
-    /*
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
@@ -101,9 +101,7 @@ public class InputVerificationData extends AppCompatActivity {
                 Long tsLong = System.currentTimeMillis()/1000;
                 String ts = tsLong.toString();
 
-                StorageReference childRef = storageReference.child("Images/"+ts);
-
-
+                StorageReference childRef = storageReference.child("Images");
 
                 //uploading the image
                 UploadTask uploadTask = childRef.putFile(filePath);
@@ -111,10 +109,10 @@ public class InputVerificationData extends AppCompatActivity {
                 uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        Uri download_uri = taskSnapshot.getDownloadUrl();
+                        String download_uri = taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
 
                         ImageModel im = new ImageModel();
-                        im.setImage_url(download_uri.toString());
+                        im.setImage_url(download_uri);
                         String key = databaseReference.child(user.getUid()).push().getKey();
 
                         databaseReference.child(user.getUid()).child(key).setValue(im);
@@ -132,7 +130,5 @@ public class InputVerificationData extends AppCompatActivity {
 
         }
     }
-
-     */
 
 }
