@@ -75,6 +75,15 @@
         <item>Kabupaten Malinau</item>
     </string-array>
 
+    <array name="foto_daerah">
+        <item>@drawable/place_aceh_singkil</item>
+        <item>@drawable/place_aceh_singkil</item>
+        <item>@drawable/place_aceh_singkil</item>
+        <item>@drawable/place_aceh_singkil</item>
+        <item>@drawable/place_aceh_singkil</item>
+        <item>@drawable/place_aceh_singkil</item>
+    </array>
+
     <string-array name="deskripsi_daerah">
         <item>Suku Singkil memliliki budaya sendiri yang banyak dipengaruhi oleh tradisi
         keislaman. Meski serumpun, etnis ini memiliki adat dan budaya yang jauh

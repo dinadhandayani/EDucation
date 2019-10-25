@@ -1,7 +1,19 @@
 package com.didapteam.project.education;
 
-public class Place {
-    private  String name, from, photo;
+import java.io.Serializable;
+
+public class Place implements Serializable {
+    private  String name, description;
+
+    public int getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(int photo) {
+        this.photo = photo;
+    }
+
+    private int photo;
 
     public String getName() {
         return name;
@@ -11,19 +23,12 @@ public class Place {
         this.name = name;
     }
 
-    public String getFrom() {
-        return from;
+    public String getDescription() {
+        return description;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
+    public void setDescription(String from) {
+        this.description = from;
     }
 
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
 }

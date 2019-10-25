@@ -103,7 +103,7 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list_daerah"
+        android:id="@+id/rv_daerah"
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:layout_below="@id/box_search"
@@ -112,7 +112,7 @@
         android:layout_marginRight="50dp"
         tools:listitem="@layout/item_row_place"/>
 
-    <Button
+    <!--Button
         android:id="@+id/btn_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -121,5 +121,5 @@
         android:textStyle="bold"
         android:textSize="16sp"
         android:textColor="@color/colorfontwhite"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"/-->
 </RelativeLayout>
