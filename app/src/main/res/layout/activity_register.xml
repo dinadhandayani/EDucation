@@ -1,54 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity"
+    android:orientation="vertical"
     android:background="@drawable/bg_gradient">
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/logo_white"/>
-    <TextView
-        android:id="@+id/txt_daftar"
-        android:text="@string/daftar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/logo"
-        android:layout_centerHorizontal="true"
-        android:textSize="30sp"
-        android:textColor="@color/colorfontwhite"
-        android:textStyle="bold"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".RegisterActivity"
+    android:background="@drawable/bg_gradient"
+    android:orientation="vertical">
     <RelativeLayout
         android:id="@+id/box_daftar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txt_daftar"
-        android:layout_marginTop="10dp"
         android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp">
+        android:layout_marginLeft="40dp"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/logo_white"/>
+        <TextView
+            android:id="@+id/txt_daftar"
+            android:text="@string/daftar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_centerHorizontal="true"
+            android:textSize="30sp"
+            android:textColor="@color/colorfontwhite"
+            android:textStyle="bold"/>
         <TextView
             android:id="@+id/txt_name"
+            android:layout_below="@+id/txt_daftar"
             android:text="@string/nama_lengkap"
             android:textSize="15sp"
             android:textColor="@color/colorfontwhite"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
         <EditText
             android:id="@+id/edt_name"
             android:textSize="16sp"
             android:textColor="@color/colorfontwhite"
-            android:background="@drawable/bg_edittext"
+            android:hint="ex : Ramdan Syaripudin"
+            android:textColorHint="@color/colorfontwhite"
+            android:textCursorDrawable="@color/colorfontwhite"
+            android:backgroundTint="@color/colorfontwhite"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/txt_name"
             android:layout_marginTop="5dp"
-            android:padding="5dp"
+            android:paddingLeft="10dp"
             android:inputType="text"
             android:importantForAutofill="no"/>
 
@@ -57,6 +67,7 @@
             android:text="@string/email"
             android:textSize="15sp"
             android:textColor="@color/colorfontwhite"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/edt_name"
@@ -65,12 +76,15 @@
             android:id="@+id/edt_email"
             android:textColor="@color/colorfontwhite"
             android:textSize="16sp"
-            android:background="@drawable/bg_edittext"
+            android:hint="ex : abcde@gmail.com"
+            android:textColorHint="@color/colorfontwhite"
+            android:textCursorDrawable="@color/colorfontwhite"
+            android:backgroundTint="@color/colorfontwhite"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/txt_email"
             android:layout_marginTop="5dp"
-            android:padding="5dp"
+            android:paddingLeft="10dp"
             android:inputType="textEmailAddress"
             android:importantForAutofill="no"/>
 
@@ -79,6 +93,7 @@
             android:text="@string/password"
             android:textSize="15sp"
             android:textColor="@color/colorfontwhite"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/edt_email"
@@ -87,12 +102,15 @@
             android:id="@+id/edt_password"
             android:textColor="@color/colorfontwhite"
             android:textSize="16sp"
-            android:background="@drawable/bg_edittext"
+            android:hint="Masukkan kata sandi"
+            android:textColorHint="@color/colorfontwhite"
+            android:textCursorDrawable="@color/colorfontwhite"
+            android:backgroundTint="@color/colorfontwhite"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/txt_password"
             android:layout_marginTop="5dp"
-            android:padding="5dp"
+            android:paddingLeft="10dp"
             android:inputType="textPassword"
             android:importantForAutofill="no"/>
 
@@ -101,6 +119,7 @@
             android:text="Confirm Password"
             android:textSize="15sp"
             android:textColor="@color/colorfontwhite"
+            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/edt_password"
@@ -110,11 +129,14 @@
             android:textColor="@color/colorfontwhite"
             android:textSize="16sp"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/txt_confirmpassword"
-            android:background="@drawable/bg_edittext"
+            android:hint="Masukkan Ulang Kata Sandi"
+            android:textColorHint="@color/colorfontwhite"
+            android:textCursorDrawable="@color/colorfontwhite"
+            android:backgroundTint="@color/colorfontwhite"
             android:layout_marginTop="5dp"
-            android:padding="5dp"
+            android:paddingLeft="10dp"
             android:inputType="textPassword"
             android:importantForAutofill="no"/>
 
@@ -122,7 +144,7 @@
             android:id="@+id/btn_submit"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:background="@color/colorfontwhite"
+            android:background="@drawable/bg_radius"
             android:text="Daftar"
             android:textColor="@color/colorGradient2"
             android:textStyle="bold"
@@ -153,4 +175,6 @@
             android:textColor="@color/colorfontwhite"
             android:onClick="Login"/>
     </RelativeLayout>
+
 </RelativeLayout>
+</ScrollView>

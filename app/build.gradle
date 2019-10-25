@@ -57,8 +57,7 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.0.1'
 
     implementation(name: 'sinch-android-rtc', version: '+', ext: 'aar')
-
-
+    implementation 'com.akexorcist:RoundCornerProgressBar:2.0.3'
 }
 
 apply plugin: 'com.google.gms.google-services'
