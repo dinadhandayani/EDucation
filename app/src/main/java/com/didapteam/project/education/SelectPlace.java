@@ -8,9 +8,11 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import static com.android.volley.VolleyLog.TAG;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -36,10 +38,11 @@ public class SelectPlace extends AppCompatActivity {
         rvPlace = findViewById(R.id.rv_daerah);
         rvPlace.setLayoutManager(new LinearLayoutManager(this));
         PlaceListAdapter placeListAdapter = new PlaceListAdapter(places);
+        rvPlace.setAdapter(placeListAdapter);
         placeListAdapter.setOnItemClickCallback(new PlaceListAdapter.OnItemClickCallback() {
             @Override
             public void onItemClicked(Place data) {
-                startActivity(new Intent(SelectPlace.this, DetailData.class).putExtra("detail", data));
+                startActivity(new Intent(SelectPlace.this, DataVerification.class).putExtra("detail", data));
             }
         });
 
