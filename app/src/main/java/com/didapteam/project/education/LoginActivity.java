@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Map;
+
+import static com.android.volley.VolleyLog.TAG;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText edtEmail, edtPassword;
@@ -62,7 +73,34 @@ public class LoginActivity extends AppCompatActivity {
                                 Bundle bundle = new Bundle();
                                 bundle.putString("email", email);
                                 bundle.putString("password", password);
-                                startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("emailpass", bundle));
+                                DatabaseReference database;
+                                database = FirebaseDatabase.getInstance().getReference("users");
+
+                                Query databaseQuery = database.orderByChild("email").equalTo(email);
+
+                                databaseQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                        if(dataSnapshot.exists()){
+
+                                            Map map = (Map) dataSnapshot.getChildren().iterator().next().getValue();
+
+                                            Log.i(TAG, String.valueOf(map));
+                                            String status = map.get("status").toString();
+
+                                            if(status.equals("true")){
+                                                startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("emailpass", bundle));
+                                            } else {
+                                                startActivity(new Intent(LoginActivity.this, VerificationResult.class));
+                                            }
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                    }
+                                });
                                 finish();
                             }
                         }
