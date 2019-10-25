@@ -6,22 +6,25 @@
     android:orientation="horizontal">
 
     <EditText
+        android:id="@+id/messageArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColorHint="#f2f2f2"
-        android:textColor="@color/colorfontwhite"
-        android:textSize="14sp"
-        android:paddingLeft="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="15dp"
         android:hint="@string/write_a_message"
-        android:id="@+id/messageArea"
+        android:background="@drawable/bg_box_detail"
         android:maxHeight="80dp"
-        />
+        android:padding="10dp"
+        android:textColor="@color/colorfontblack"
+        android:textColorHint="@color/colorGray"
+        android:textSize="14sp" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="6"
+        android:layout_marginBottom="15dp"
         android:src="@android:drawable/ic_menu_send"
         android:id="@+id/sendButton"/>
 </LinearLayout>

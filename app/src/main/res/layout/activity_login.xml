@@ -51,7 +51,7 @@
             android:id="@+id/edt_email"
             android:textSize="16sp"
             android:textColor="@color/colorfontwhite"
-            android:hint="ex : ramdan"
+            android:hint="ex : abcde@mail.com"
             android:textColorHint="@color/colorfontwhite"
             android:textCursorDrawable="@color/colorfontwhite"
             android:backgroundTint="@color/colorfontwhite"
