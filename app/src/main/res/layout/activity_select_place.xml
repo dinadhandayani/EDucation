@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="-100dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="40dp"
         android:text="Pilih Daerah"
         android:textColor="@color/colorWhite"
         android:textSize="24sp"
@@ -42,64 +42,114 @@
         android:id="@+id/box_search"
         android:layout_below="@id/txt_choose_place"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:background="#f1f1f1"
         android:layout_marginTop="10dp">
-        <SearchView
-            android:id="@+id/sv_school"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/colorBgEdittextSearchView"
-            android:queryHint="Cari daerah disini ..."/>
-        <TextView
-            android:id="@+id/txt_bidke"
-            android:layout_below="@id/sv_school"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:text="Bidang Keahllian"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorfontblack"/>
-        <TextView
-            android:id="@+id/txt_bidang_keahlian"
-            android:layout_below="@id/sv_school"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:layout_marginRight="12dp"
-            android:textSize="12sp"
-            android:textColor="@color/colorfontblack"
-            tools:text="Pendidikan Kewarganegaraan"/>
+<!--        <SearchView-->
+<!--            android:id="@+id/sv_school"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginLeft="12dp"-->
+<!--            android:layout_marginRight="12dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+<!--            android:background="@color/colorBgEdittextSearchView"-->
+<!--            android:queryHint="Cari daerah disini ..."/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/txt_bidke"-->
+<!--            android:layout_below="@id/sv_school"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="12dp"-->
+<!--            android:text="Bidang Keahllian"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/colorfontblack"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/txt_bidang_keahlian"-->
+<!--            android:layout_below="@id/sv_school"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="140dp"-->
+<!--            android:layout_marginRight="12dp"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textColor="@color/colorfontblack"-->
+<!--            tools:text="Pendidikan Kewarganegaraan"/>-->
 
-        <TextView
-            android:id="@+id/txt_kada"
-            android:layout_below="@id/txt_bidke"
+<!--        <TextView-->
+<!--            android:id="@+id/txt_kada"-->
+<!--            android:layout_below="@id/txt_bidke"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="12dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:text="Karakteristik Daerah"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="@color/colorfontblack"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/txt_karakteristik_daerah"-->
+<!--            android:layout_below="@id/txt_bidang_keahlian"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="140dp"-->
+<!--            android:layout_marginRight="12dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textColor="@color/colorfontblack"-->
+<!--            tools:text="Pesisir"/>-->
+        <TableLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="8dp"
-            android:text="Karakteristik Daerah"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorfontblack"/>
-        <TextView
-            android:id="@+id/txt_karakteristik_daerah"
-            android:layout_below="@id/txt_bidang_keahlian"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginTop="8dp"
-            android:textSize="12sp"
-            android:textColor="@color/colorfontblack"
-            tools:text="Pesisir"/>
+            android:layout_height="wrap_content">
+            <TableRow android:id="@+id/tr_bidke"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="12dp">
+                <TextView
+                    android:id="@+id/txt_bidke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bidang Keahllian"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorfontblack"/>
+                <TextView
+                    android:id="@+id/txt_bidang_keahlian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorfontblack"
+                    tools:text="Pendidikan Kewarganegaraan"/>
+            </TableRow>
+            <TableRow android:id="@+id/tr_kada"
+                android:layout_below="@id/tr_bidke"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="12dp">
+                <TextView
+                    android:id="@+id/txt_kada"
+                    android:layout_below="@id/txt_bidke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Karakteristik Daerah"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorfontblack"/>
+                <TextView
+                    android:id="@+id/txt_karakteristik_daerah"
+                    android:layout_below="@id/txt_bidang_keahlian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorfontblack"
+                    tools:text="Pesisir"/>
+            </TableRow>
+        </TableLayout>
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -107,9 +157,9 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:layout_below="@id/box_search"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="-1dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginRight="40dp"
         tools:listitem="@layout/item_row_place"/>
 
     <!--Button
