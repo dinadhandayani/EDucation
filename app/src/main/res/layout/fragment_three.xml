@@ -11,7 +11,7 @@
         android:layout_height="35dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:background="@color/colorGradient2"
+        android:background="@drawable/bg_gradient"
         android:text="Mulai Monitoring"
         android:textColor="@color/colorfontwhite"
         android:textStyle="bold"
