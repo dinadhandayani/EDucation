@@ -1,13 +1,4 @@
 <resources>
-    <array name="rating">
-        <item>5.0</item>
-        <item>4.9</item>
-        <item>4.9</item>
-        <item>4.8</item>
-        <item>5.0</item>
-        <item>4.8</item>
-        <item>5.0</item>
-    </array>
     <array name="category_photos">
         <item>@drawable/ic_add</item>
         <item>@drawable/ic_add</item>

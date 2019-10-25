@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import static com.android.volley.VolleyLog.TAG;
 
 import java.io.Serializable;
@@ -23,6 +25,7 @@ public class SelectPlace extends AppCompatActivity {
     TypedArray dataPhoto;
     ArrayList<Place> places;
     private RecyclerView rvPlace;
+    TextView tvBidKe, tvKaDa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,13 @@ public class SelectPlace extends AppCompatActivity {
 
         prepare();
         addItem();
+
+        tvBidKe = findViewById(R.id.txt_bidang_keahlian);
+        tvKaDa = findViewById(R.id.txt_karakteristik_daerah);
+
+
+        tvBidKe.setText(UserData.pilihan);
+        tvKaDa.setText(UserData.daerah);
 
         rvPlace = findViewById(R.id.rv_daerah);
         rvPlace.setLayoutManager(new LinearLayoutManager(this));
