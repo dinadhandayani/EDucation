@@ -32,9 +32,9 @@ public class OneFragment extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View rootView = inflater.inflate(R.layout.fragment_one, container, false);
+        View rootView = inflater.inflate(R.layout.activity_verification_result, container, false);
 
-        rvCategory = rootView.findViewById(R.id.rv_category);
+        /*rvCategory = rootView.findViewById(R.id.rv_category);
         rvCategory.setHasFixedSize(true);
 
         list.addAll(PlaceData.getListData());
@@ -47,7 +47,7 @@ public class OneFragment extends Fragment{
             public void onItemClicked(Place data) {
                 showSelectedPlace(data);
             }
-        });
+        }); */
 
         return rootView;
     }

@@ -1,13 +1,10 @@
 package com.didapteam.project.education;
 
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 
@@ -40,10 +37,6 @@ public class PlaceListAdapter extends RecyclerView.Adapter<PlaceListAdapter.Cate
     @Override
     public void onBindViewHolder(@NonNull final CategoryViewHolder holder, int position) {
         Place place = listPlace.get(position);
-        /*Glide.with(holder.itemView.getContext())
-                .load(place.getPhoto())
-                .apply(new RequestOptions().override(55, 55))
-                .into(holder.imgPhoto); */
         holder.tvName.setText(place.getName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,8 +47,7 @@ public class PlaceListAdapter extends RecyclerView.Adapter<PlaceListAdapter.Cate
     }
 
     class CategoryViewHolder extends RecyclerView.ViewHolder {
-        ImageView imgPhoto;
-        TextView tvName, tvFrom;
+        TextView tvName;
         CategoryViewHolder(View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tv_item_name);

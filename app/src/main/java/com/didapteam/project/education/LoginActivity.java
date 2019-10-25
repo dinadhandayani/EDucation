@@ -85,11 +85,11 @@ public class LoginActivity extends AppCompatActivity {
 
                                             Map map = (Map) dataSnapshot.getChildren().iterator().next().getValue();
 
-                                            Log.i(TAG, String.valueOf(map));
                                             String status = map.get("status").toString();
 
                                             if(status.equals("true")){
-                                                startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("emailpass", bundle));
+                                                // startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("emailpass", bundle));
+                                                startActivity(new Intent(LoginActivity.this, SelectPlace.class));
                                             } else {
                                                 startActivity(new Intent(LoginActivity.this, VerificationResult.class));
                                             }
