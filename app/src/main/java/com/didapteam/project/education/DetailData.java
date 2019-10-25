@@ -73,6 +73,9 @@ public class DetailData extends AppCompatActivity {
 
                    }
                });
+
+               startActivity(new Intent(DetailData.this, VerificationResult.class ));
+
             }
         });
 

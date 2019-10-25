@@ -95,14 +95,14 @@ public class LoginActivity extends AppCompatActivity {
                                             UserData.sekolah = map.get("sekolah").toString();
 
                                             if(status.equals("true")){
-                                                // startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("emailpass", bundle));
+                                                startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("emailpass", bundle));
+                                                //startActivity(new Intent(LoginActivity.this, SelectPlace.class));
+                                            } else {
                                                 if(UserData.sekolah.equals("null")){
                                                     startActivity(new Intent(LoginActivity.this, SelectPlace.class));
-                                                } else {
-                                                    startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("emailpass", bundle));
+                                                } else{
+                                                    startActivity(new Intent(LoginActivity.this, VerificationResult.class));
                                                 }
-                                            } else {
-                                                startActivity(new Intent(LoginActivity.this, VerificationResult.class));
                                                 finish();
                                             }
                                         }

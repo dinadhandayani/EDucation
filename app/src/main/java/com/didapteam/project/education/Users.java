@@ -12,6 +12,24 @@ public class Users implements Serializable {
     private String pilihan;
     private Boolean status;
     private String imgUrl;
+    private String tempatLahir;
+    private String tanggalLahir;
+
+    public String getTempatLahir() {
+        return tempatLahir;
+    }
+
+    public void setTempatLahir(String tempatLahir) {
+        this.tempatLahir = tempatLahir;
+    }
+
+    public String getTanggalLahir() {
+        return tanggalLahir;
+    }
+
+    public void setTanggalLahir(String tanggalLahir) {
+        this.tanggalLahir = tanggalLahir;
+    }
 
     private String sekolah;
 
@@ -60,7 +78,7 @@ public class Users implements Serializable {
 
     }
 
-    public Users(String nm, String em, String pass, String bid, String da, String pil, Boolean st, String im, String sk){
+    public Users(String nm, String em, String pass, String bid, String da, String pil, Boolean st, String im, String sk, String tem, String tang){
         nama = nm;
         email = em;
         password = pass;
@@ -70,6 +88,8 @@ public class Users implements Serializable {
         status = st;
         imgUrl = im;
         sekolah = sk;
+        tempatLahir = tem;
+        tanggalLahir = tang;
     }
 
     public String getNama(){

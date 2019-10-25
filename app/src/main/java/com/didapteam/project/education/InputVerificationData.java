@@ -24,7 +24,8 @@ import com.google.firebase.storage.UploadTask;
 
 public class InputVerificationData extends AppCompatActivity {
 
-    private Button btnChooseKTP, btnChooseIjazah, btnSubmit;
+    private Button btnChooseIjazah, btnSubmit;
+    private EditText edtTempat, edtTanggal, edtBulan, edtTahun, edtKTP;
     private Spinner spnDaerah, spnBidang;
     private FirebaseAuth auth;
     private DatabaseReference database;
@@ -67,11 +68,14 @@ public class InputVerificationData extends AppCompatActivity {
             }
         });
 
-        btnChooseKTP = findViewById(R.id.btn_ktp);
         btnSubmit = findViewById(R.id.btn_submit);
         btnSubmit.setEnabled(false);
         spnDaerah = findViewById(R.id.spin_kada);
         spnBidang = findViewById(R.id.spin_bidke);
+        edtTempat = findViewById(R.id.edt_tempat);
+        edtTanggal = findViewById(R.id.edt_tanggal);
+        edtBulan = findViewById(R.id.edt_bulan);
+        edtKTP = findViewById(R.id.edt_noktp);
     }
 
     @Override
@@ -116,8 +120,13 @@ public class InputVerificationData extends AppCompatActivity {
                 Boolean status = false;
                 String bidang = "null";
                 String sekolah = "null";
+                String tempat = edtTempat.getText().toString().trim();
+                String tanggal = edtTanggal.getText().toString().trim();
+                String bulan = edtBulan.getText().toString().trim();
+                String tahun = edtTahun.getText().toString().trim();
+                String ttl = tanggal + "/" + bulan + "/" + tahun;
                 startActivity(new Intent(InputVerificationData.this, LoginActivity.class));
-                submitUser(new Users(name, email, password, bidang, daerah, pilihan,  status, download_uri, sekolah));
+                submitUser(new Users(name, email, password, bidang, daerah, pilihan,  status, download_uri, sekolah, tempat, ttl));
             }
         });
     }

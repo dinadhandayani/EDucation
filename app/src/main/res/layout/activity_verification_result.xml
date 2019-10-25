@@ -19,7 +19,8 @@
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:src="@drawable/waiting_verif"
-            android:layout_marginTop="-20dp"/>
+            android:layout_marginTop="-20dp"
+            android:clickable="true" />
         <TextView
             android:id="@+id/wait"
             android:layout_below="@+id/img_not_verified"

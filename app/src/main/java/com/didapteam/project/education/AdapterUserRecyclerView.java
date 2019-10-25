@@ -25,10 +25,11 @@ public class AdapterUserRecyclerView extends RecyclerView.Adapter<AdapterUserRec
          * Di tutorial ini kita hanya menggunakan data String untuk tiap item
          * dan juga view nya hanyalah satu TextView
          */
-        TextView tvTitle;
+        TextView tvName, tvBidang;
         ViewHolder(View v) {
             super(v);
-            tvTitle = (TextView) v.findViewById(R.id.tv_username);
+            tvName = (TextView) v.findViewById(R.id.tv_username);
+            tvBidang = (TextView) v.findViewById(R.id.tv_bidang);
         }
     }
     @Override
@@ -47,7 +48,8 @@ public class AdapterUserRecyclerView extends RecyclerView.Adapter<AdapterUserRec
  * Menampilkan data pada view
  */
         final String name = userList.get(position).getNama();
-        holder.tvTitle.setOnClickListener(new View.OnClickListener() {
+        final String bidang = userList.get(position).getBidang();
+        holder.tvName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 /**
@@ -63,7 +65,7 @@ public class AdapterUserRecyclerView extends RecyclerView.Adapter<AdapterUserRec
 
             }
         });
-        holder.tvTitle.setOnLongClickListener(new View.OnLongClickListener() {
+        holder.tvName.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
 /**
@@ -72,7 +74,8 @@ public class AdapterUserRecyclerView extends RecyclerView.Adapter<AdapterUserRec
                 return true;
             }
         });
-        holder.tvTitle.setText(name);
+        holder.tvName.setText(name);
+        holder.tvBidang.setText(bidang);
     }
 
     @Override

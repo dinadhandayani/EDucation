@@ -37,7 +37,7 @@
             android:layout_marginStart="12dp" />
 
         <TextView
-            android:id="@+id/tv_last_chat"
+            android:id="@+id/tv_bidang"
             android:text="Android Version"
             android:textSize="12sp"
             android:maxLines="1"
