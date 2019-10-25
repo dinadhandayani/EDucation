@@ -7,5 +7,5 @@ public class UserData {
     static String daerah="";
     static String pilihan="";
     static Boolean status=false;
-    static String imgUrl="";
+    static String sekolah="";
 }

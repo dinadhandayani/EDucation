@@ -2,6 +2,7 @@ package com.didapteam.project.education;
 
 import android.os.Bundle;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,6 +38,9 @@ public class ConsultanListActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(ConsultanListActivity.this);
         rvView.setLayoutManager(layoutManager);
         database = FirebaseDatabase.getInstance().getReference();
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.hide();
 
         database.child("users").addValueEventListener(new ValueEventListener() {
             @Override

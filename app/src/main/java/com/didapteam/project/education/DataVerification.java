@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,7 +21,7 @@ public class DataVerification extends AppCompatActivity {
     TextView tvCity, tvDesc, tvKaDa, tvBidKe;
     private RecyclerView rvSchool;
     ArrayList<School> schools;
-    String[] dataName, dataKota, dataKarakteristik, dataKebutuhan1, dataKebutuhan2;
+    String[] dataName, dataKota, dataKarakteristik, dataKebutuhan1, dataKebutuhan2, dataStatusBos, dataWaktu, dataDaya, dataAksesInternet, dataSumber;
     String name, desc;
     int photo;
 
@@ -70,6 +71,11 @@ public class DataVerification extends AppCompatActivity {
         dataKarakteristik = getResources().getStringArray(R.array.karakteristik);
         dataKebutuhan1 = getResources().getStringArray(R.array.kebutuhan1);
         dataKebutuhan2 = getResources().getStringArray(R.array.kebutuhan2);
+        dataAksesInternet = getResources().getStringArray(R.array.akses_internet);
+        dataStatusBos = getResources().getStringArray(R.array.status_bos);
+        dataWaktu = getResources().getStringArray(R.array.waktu_penyelenggaraan);
+        dataSumber = getResources().getStringArray(R.array.sumber_listrik);
+        dataDaya = getResources().getStringArray(R.array.daya_listrik);
     }
 
     private void addItem(){
@@ -78,6 +84,14 @@ public class DataVerification extends AppCompatActivity {
             if(dataKota[i].equals(name) && dataKarakteristik[i].equals(UserData.daerah) && (dataKebutuhan1[i].equals(UserData.pilihan) || dataKebutuhan2[i].equals(UserData.pilihan))){
                 School school = new School();
                 school.setNama(dataName[i]);
+                school.setAksesInternet(dataAksesInternet[i]);
+                school.setDayaListrik(dataDaya[i]);
+                school.setKebutuhan1(dataKebutuhan1[i]);
+                school.setKebutuhan2(dataKebutuhan2[i]);
+                school.setKarakteristik(dataKarakteristik[i]);
+                school.setSumberListrik(dataSumber[i]);
+                school.setStatusBos(dataStatusBos[i]);
+                school.setWaktu(dataWaktu[i]);
                 schools.add(school);
             }
         }
