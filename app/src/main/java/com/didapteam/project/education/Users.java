@@ -13,6 +13,16 @@ public class Users implements Serializable {
     private Boolean status;
     private String imgUrl;
 
+    private String sekolah;
+
+    public String getSekolah() {
+        return sekolah;
+    }
+
+    public void setSekolah(String sekolah) {
+        this.sekolah = sekolah;
+    }
+
     public String getImgUrl() {
         return imgUrl;
     }
@@ -50,7 +60,7 @@ public class Users implements Serializable {
 
     }
 
-    public Users(String nm, String em, String pass, String bid, String da, String pil, Boolean st, String im){
+    public Users(String nm, String em, String pass, String bid, String da, String pil, Boolean st, String im, String sk){
         nama = nm;
         email = em;
         password = pass;
@@ -59,6 +69,7 @@ public class Users implements Serializable {
         pilihan = pil;
         status = st;
         imgUrl = im;
+        sekolah = sk;
     }
 
     public String getNama(){

@@ -87,11 +87,20 @@ public class LoginActivity extends AppCompatActivity {
 
                                             String status = map.get("status").toString();
 
+                                            UserData.bidang = map.get("bidang").toString();
+                                            UserData.daerah = map.get("daerah").toString();
+                                            UserData.email = map.get("email").toString();
+                                            UserData.nama = map.get("nama").toString();
+                                            UserData.pilihan = map.get("pilihan").toString();
+
+                                            Log.i(TAG, UserData.bidang);
+
                                             if(status.equals("true")){
                                                 // startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("emailpass", bundle));
                                                 startActivity(new Intent(LoginActivity.this, SelectPlace.class));
                                             } else {
                                                 startActivity(new Intent(LoginActivity.this, VerificationResult.class));
+                                                finish();
                                             }
                                         }
                                     }
@@ -101,7 +110,6 @@ public class LoginActivity extends AppCompatActivity {
 
                                     }
                                 });
-                                finish();
                             }
                         }
                     });

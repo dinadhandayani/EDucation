@@ -115,8 +115,9 @@ public class InputVerificationData extends AppCompatActivity {
                 String pilihan = String.valueOf(spnBidang.getSelectedItem());
                 Boolean status = false;
                 String bidang = "null";
+                String sekolah = "null";
                 startActivity(new Intent(InputVerificationData.this, LoginActivity.class));
-                submitUser(new Users(name, email, password, bidang, daerah, pilihan,  status, download_uri));
+                submitUser(new Users(name, email, password, bidang, daerah, pilihan,  status, download_uri, sekolah));
             }
         });
     }
