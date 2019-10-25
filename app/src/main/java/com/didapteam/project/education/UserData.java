@@ -8,4 +8,6 @@ public class UserData {
     static String pilihan="";
     static Boolean status=false;
     static String sekolah="";
+    static String tempatLahir="";
+    static String tanggalLahir="";
 }

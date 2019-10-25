@@ -41,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
@@ -59,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new DBReadUserActivity(), "Pesan");
         adapter.addFragment(new ThreeFragment(), "Monitoring");
-        adapter.addFragment(new OneFragment(), "Profil");
+        adapter.addFragment(new ProfileActivity(), "Profil");
         viewPager.setAdapter(adapter);
     }
 

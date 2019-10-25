@@ -93,6 +93,8 @@ public class LoginActivity extends AppCompatActivity {
                                             UserData.nama = map.get("nama").toString();
                                             UserData.pilihan = map.get("pilihan").toString();
                                             UserData.sekolah = map.get("sekolah").toString();
+                                            UserData.tempatLahir = map.get("tempatLahir").toString();
+                                            UserData.tanggalLahir = map.get("tanggalLahir").toString();
 
                                             if(status.equals("true")){
                                                 startActivity(new Intent(LoginActivity.this, MainActivity.class).putExtra("emailpass", bundle));
