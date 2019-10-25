@@ -67,11 +67,11 @@
     </string-array>
 
     <array name="foto_daerah">
-        <item>@drawable/place_aceh_singkil</item>
-        <item>@drawable/place_aceh_singkil</item>
-        <item>@drawable/place_aceh_singkil</item>
-        <item>@drawable/place_aceh_singkil</item>
-        <item>@drawable/place_aceh_singkil</item>
+        <item>@drawable/place_aceh_singkil2</item>
+        <item>@drawable/place_aceh_singkil2</item>
+        <item>@drawable/place_aceh_singkil2</item>
+        <item>@drawable/place_aceh_singkil2</item>
+        <item>@drawable/place_aceh_singkil2</item>
     </array>
 
     <string-array name="deskripsi_daerah">
@@ -226,13 +226,13 @@
     </string-array>
 
     <string-array name="karakteristik">
-        <item>Pesisir Pantai</item>
-        <item>Pesisir Pantai</item>
+        <item>Pesisir</item>
+        <item>Pesisir</item>
         <item>Pegunungan</item>
-        <item>Pesisir Pantai</item>
+        <item>Pesisir</item>
         <item>Pegunungan</item>
         <item>Pegunungan</item>
         <item>Pegunungan</item>
-        <item>Pesisir Pantai</item>
+        <item>Pesisir</item>
     </string-array>
 </resources>
