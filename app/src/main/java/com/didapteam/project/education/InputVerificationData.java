@@ -83,6 +83,7 @@ public class InputVerificationData extends AppCompatActivity {
         edtBulan = findViewById(R.id.edt_bulan);
         edtKTP = findViewById(R.id.edt_noktp);
         edtNama = findViewById(R.id.edt_name);
+        edtTahun = findViewById(R.id.edt_tahun);
 
     }
 
