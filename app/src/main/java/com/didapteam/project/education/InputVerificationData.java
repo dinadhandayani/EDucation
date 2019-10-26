@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -28,6 +29,7 @@ public class InputVerificationData extends AppCompatActivity {
 
     private Button btnChooseIjazah, btnSubmit;
     private EditText edtTempat, edtTanggal, edtBulan, edtTahun, edtKTP;
+    private TextView edtNama;
     private Spinner spnDaerah, spnBidang;
     private FirebaseAuth auth;
     private DatabaseReference database;
@@ -55,6 +57,8 @@ public class InputVerificationData extends AppCompatActivity {
 
         initView();
         userVerif();
+
+        edtNama.setText(name);
     }
 
     private void initView(){
@@ -78,6 +82,8 @@ public class InputVerificationData extends AppCompatActivity {
         edtTanggal = findViewById(R.id.edt_tanggal);
         edtBulan = findViewById(R.id.edt_bulan);
         edtKTP = findViewById(R.id.edt_noktp);
+        edtNama = findViewById(R.id.edt_name);
+
     }
 
     @Override
