@@ -20,7 +20,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/pic1" />
+            android:src="@drawable/profileicon" />
 
         <TextView
             android:id="@+id/tv_username"
