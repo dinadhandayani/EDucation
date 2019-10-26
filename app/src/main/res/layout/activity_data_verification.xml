@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/img_bg_photo"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:scaleType="fitXY"/>
 
     <RelativeLayout
@@ -19,7 +19,7 @@
         android:layout_height="160dp"
         android:layout_below="@+id/img_bg_photo"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="-40dp"
+        android:layout_marginTop="-60dp"
         android:layout_marginRight="40dp"
         android:background="@color/colorfontwhite">
 

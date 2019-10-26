@@ -18,8 +18,4 @@
         android:right="5dp"
         android:left="5dp">
     </padding>
-
-
-
-
 </shape>
