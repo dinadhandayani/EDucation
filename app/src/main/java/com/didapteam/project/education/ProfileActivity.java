@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ProfileActivity extends Fragment {
@@ -30,12 +31,20 @@ public class ProfileActivity extends Fragment {
         TextView tvEmail = rootView.findViewById(R.id.txt_email);
         TextView tvMengajar = rootView.findViewById(R.id.txt_tempatmengajar);
         TextView tvBidang = rootView.findViewById(R.id.txt_bike);
+        Button btnLogout = rootView.findViewById(R.id.btn_logout);
 
         tvNama.setText(UserData.nama);
         tvTTL.setText(UserData.tempatLahir + ", " + UserData.tanggalLahir);
         tvEmail.setText(UserData.email);
         tvBidang.setText(UserData.pilihan);
         tvMengajar.setText(UserData.sekolah);
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+            }
+        });
         return rootView;
     }
 }

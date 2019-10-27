@@ -54,7 +54,6 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
-
         <service android:name=".SinchService" />
     </application>
 

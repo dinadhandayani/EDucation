@@ -28,5 +28,6 @@
     <color name="colorWhiteTransparent">#F2FFFFFF</color>
 
     <color name="colorBlue">#269ccb</color>
+    <color name="colorRed">#dd0000</color>
 
 </resources>
